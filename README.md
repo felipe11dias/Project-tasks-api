@@ -1,16 +1,41 @@
 # Project-tasks-api
 
-# Follow Steps
 
-# 1
+# Follow windows
 
-python3 -m venv venv
 
-# 2
+First Step:
 
-Linux: source venv/bin/activate
-Windows: venv\Scripts\activate
+    python -m venv venv
+        
+Second Step:
 
-# 3
+    venv\Scripts\activate
+    
+Third Step:
 
-python manage.py runserver
+    pip install django
+    
+Fourth Step:
+
+    python manage.py runserver
+    
+    
+# Follow Linux
+
+
+First Step:
+
+    python3 -m venv venv
+        
+Second Step:
+
+    source venv/bin/activate
+
+Third Step:
+
+    pip3 install django
+    
+Fourth Step:
+
+    python3 manage.py runserver

@@ -1,9 +1,10 @@
 from core.api.v1.views.views_v1 import index
 from django.urls import path,re_path,include
 from rest_framework import permissions
-from core.api.v1.views.views_v1 import index
+from core.api.v1.views.views_v1 import index,ListTasksView,DetailTasksView
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -22,7 +23,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
    path("accounts/", include("core.api.v1.urls.account_urls")),
-   path("tasks/", index),
+   path("tasks/", ListTasksView.as_view()),
+   path("tasks/<int:pk>", DetailTasksView.as_view()),
    re_path('swagger', schema_view.with_ui('swagger', cache_timeout=0),
          name='schema-swagger-ui'),
    re_path('redoc/', schema_view.with_ui('redoc', cache_timeout=0),
